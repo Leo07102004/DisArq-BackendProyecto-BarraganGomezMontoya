@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Factories;
+
+use App\Models\Article;
+
+class CharactersHandler implements ThemeHandler
+{
+    public function getArticle()
+    {
+        return Article::where('tema', 'Personajes')->first();
+    }
+}
