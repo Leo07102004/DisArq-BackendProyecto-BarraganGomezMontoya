@@ -1,0 +1,16 @@
+config:
+  target: 'http://127.0.0.1:8000' # Cambia la URL por la de tu servidor Laravel
+  phases:
+    - duration: 60  # Duración de la prueba en segundos
+      arrivalRate: 10 # Usuarios simultáneos por segundo
+scenarios:
+  - flow:
+      - get:
+          url: '/' # Página inicial
+      - get:
+          url: '/api/login' # Página de inicio de sesión
+      - post:
+          url: '/api/login'
+          json:
+            email: 'user@example.com'
+            password: 'password'
